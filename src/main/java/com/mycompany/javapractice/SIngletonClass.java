@@ -14,9 +14,9 @@ import java.sql.SQLException;
  * @author Malhotra Computer
  */
 public class SIngletonClass {
-   Connection conn = null;
+   Connection connection = null;
    
-   private static SIngletonClass instance = null;
+   private static SIngletonClass getinstance = null;
    
    
    private SIngletonClass () {
@@ -26,10 +26,10 @@ public class SIngletonClass {
            //jdbc:mysql://localhost:3306/librarym?zeroDateTimeBehavior=CONVERT_TO_NULL [root on Default schema]
            //jdbc:mysql://localhost:3306/libraryManagement?zeroDateTimeBehavior=CONVERT_TO_NULL [root on Default schema]
            //jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=CONVERT_TO_NULL [root on Default schema]
-           conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarym","root","");
-            if(conn != null){
+           connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarym","root","");
+            if(connection != null){
                 String studentTable = "CREATE TABLE IF NOT EXISTS studentTable(id INT AUTO_INCREMENT, name varchar(255), contact varchar(225), email varchar(255), PRIMARY KEY(id))";
-               PreparedStatement ps = conn.prepareCall(studentTable);
+               PreparedStatement ps = connection.prepareCall(studentTable);
                ps.execute();
             }
        } catch (SQLException ex) {
@@ -40,11 +40,17 @@ public class SIngletonClass {
    }
    
    public static SIngletonClass getInstance(){
-       if(instance == null){
-        instance = new SIngletonClass();
+       if(getinstance == null){
+        getinstance = new SIngletonClass();
        }
-       return instance;
+       return getinstance;
    }
+
+    class conn {
+
+        public conn() {
+        }
+    }
     
     
     

@@ -232,7 +232,7 @@ else {
     try {
         String student = "INSERT INTO student (name, email, contactNo, password) VALUES (?, ?, ?, ?)";
        
-        PreparedStatement ps = conn.prepareCall(student);
+        PreparedStatement ps = conn.connection.prepareCall(student);
        
         ps.setString(1, sName.getText());
         ps.setString(2, sEmail.getText());
@@ -260,7 +260,7 @@ else {
             // dispose();
         }
        
-    } catch ( Exception ex) {
+    } catch ( SQLException ex) {
         ex.printStackTrace();  // Prints full SQL error details
     }
 }
@@ -306,4 +306,20 @@ else {
     private javax.swing.JTextField sPassword;
     private javax.swing.JButton sbutton;
     // End of variables declaration//GEN-END:variables
+
+    Object getid() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    Object getEmail() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    Object getContact() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    Object getPassword() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

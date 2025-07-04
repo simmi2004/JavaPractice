@@ -10,10 +10,13 @@ package com.mycompany.javapractice;
 public class JavaPractice {
 
     public static void main(String[] args) {
+                System.out.println("Hello!");
+
+        SIngletonClass conn = SIngletonClass.getInstance();
         
-        SIngletonClass single = SIngletonClass.getInstance();
-        System.out.println("Hello!");
-        RegistrationForm screen = new RegistrationForm();
+        //System.out.println("Hello!");
+        //RegistrationForm screen = new RegistrationForm();
+        JFramePractice screen = new JFramePractice();
         screen.setVisible(true);
                 }
 }
